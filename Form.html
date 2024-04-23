@@ -10,58 +10,70 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
         }
         .container {
-            max-width: 600px;
+            max-width: 400px;
             margin: 50px auto;
-            background-color: #fff;
+            background-color: #fff; /* White background */
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         h1 {
             text-align: center;
+            color: #ffd700; /* Golden heading color */
+            margin-bottom: 20px; /* Added margin for spacing */
+        }
+        input[type="text"],
+        input[type="password"],
+        button {
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+            border: 1px solid #ffd700; /* Golden border */
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0; /* Increased margin for spacing */
+            width: 100%; /* Full width */
+            box-sizing: border-box; /* Include padding in width */
         }
         .button {
             display: block;
-            width: 200px;
-            margin: 20px auto;
+            margin-top: 20px; /* Adjusted margin for spacing */
             padding: 10px;
             text-align: center;
-            background-color: #007bff;
-            color: #fff;
+            background-color: #ffd700; /* Golden background */
+            color: #000; /* Black text */
             text-decoration: none;
             border-radius: 5px;
+            transition: background-color 0.3s; /* Smooth transition */
         }
         .button:hover {
-            background-color: #0056b3;
+            background-color: #daa520;
+            color: #000000; /* Darkened golden color on hover */
+        }
+        h2{
+            
+            color: #000000;
+        }
+        p{
+           
+            color: #000000;
         }
 </style>
 <body>
-    <div id="loginPage">
+    <div class="container">
         <h1>Login</h1>
         <form id="loginForm">
             <div>
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username">
+                <input type="text" id="username" name="username" placeholder="Username">
             </div>
             <div>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password">
+                <input type="password" id="password" name="password" placeholder="Password">
             </div>
-            <button type="submit">Login</button>
+            <button type="submit" class="button">Login</button>
         </form>
-    </div>
-
-    <div id="accountDetailsPage" style="display: none;">
-        <h1>Welcome to Your Account!</h1>
-        <div class="container">
-            <h1>Payment Details</h1>
-            <p>Account Number: 190201000942948</p>
-            <p>IFSC Code: FDRL0001902</p>
-            <a href="https://paytm.com" class="button">Click to Pay with Paytm</a>
-        </div>
     </div>
 
     <!-- Script to handle form submission and show/hide pages -->
@@ -75,8 +87,16 @@
 
             if (username === "user@gmail.com" && password === "0123456789") {
                 // Show the account details page
-                document.getElementById("loginPage").style.display = "none";
-                document.getElementById("accountDetailsPage").style.display = "block";
+                document.body.innerHTML = `
+                    <div class="container">
+                        <h1>Welcome to Your Account!</h1>
+                        <div>
+                            <h2>Payment Details</h2>
+                            <p>Account Number: 190201000942948</p>
+                            <p>IFSC Code: FDRL0001902</p>
+                            <a href="https://paytm.com" class="button">Click to Pay with Paytm</a>
+                        </div>
+                    </div>`;
             } else {
                 alert("Invalid username or password. Please try again.");
             }
