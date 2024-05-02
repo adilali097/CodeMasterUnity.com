@@ -6,16 +6,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Email information
     $to = "adnanmuhammad4393@gmail.com";
-    $subject = "New Inquiry from CodeMasterUnity";
+    $subject = "New Affilater from CodeMasterUnity";
     $body = "Name: $name\nEmail: $email\n\n$message";
 
     // Send email
     if (mail($to, $subject, $body)) {
-        echo "Thank you! Your message has been sent.";
+        echo "<div class='alert alert-success mt-3' role='alert'>Thank you! Your message has been sent.</div>";
     } else {
-        echo "Oops! Something went wrong. Please try again later.";
+        echo "<div class='alert alert-danger mt-3' role='alert'>Oops! Something went wrong. Please try again later.</div>";
     }
-} else {
-    echo "Error: Method not allowed.";
 }
 ?>
