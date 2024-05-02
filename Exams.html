@@ -6,18 +6,16 @@
   <title>Exams - AI Prompt Engineering</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Animation CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <!-- Custom CSS -->
   <style>
-    /* Add custom styles here */
     body {
-      background-color: #f8f9fa; /* Light gray background */
+      background-color: #f8f9fa;
     }
     .jumbotron {
-      background-color: #000; /* Black background */
-      color: #ffd700; /* Golden text color */
-    }
-    .exam-section {
-      margin-top: 50px;
+      background-color: #000;
+      color: #ffd700;
     }
   </style>
 </head>
@@ -25,61 +23,91 @@
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">CodeMasterUnity</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="Courses.html">Courses</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="Exams.html">Exams</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="About.html">About</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="Contact.html">Contact</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="mentor.html">Mentor</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+    <a class="navbar-brand" href="#">CodeMasterUnity</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Courses.html">Courses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Exams.html">Exams</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="About.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Contact.html">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mentor.html">Mentor</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Navbar -->
 
   <!-- Main Content -->
-  <div class="container my-5">
-    <!-- Jumbotron -->
-    <div class="jumbotron text-center animate__animated animate__fadeIn">
-      <h1 class="display-4">Exams at CodeMasterUnity</h1>
-      <p class="lead">Achieve your goals with our rigorous assessments.</p>
+  <div class="container my-5" id="examCards">
+    <!-- Exam Schedule -->
+    <h2 class="mb-4">Exams</h2>
+    <div class="row">
+      <!-- JavaScript will populate this area with exam cards -->
     </div>
-
-    <!-- Exam Section -->
-    <div class="row exam-section">
-      <div class="col-md-8 offset-md-2">
-        <p>AI Prompt Engineering offers a variety of exams to evaluate your knowledge and skills in the field of artificial intelligence, programming, and data science. Whether you're a student preparing for a certification exam or a professional seeking to validate your expertise, we have the right exam for you.</p>
-        <p>Our exams are carefully designed by experts in the industry to ensure they are relevant, comprehensive, and challenging. We use a combination of multiple-choice questions, coding challenges, and practical assessments to provide a thorough evaluation of your capabilities.</p>
-        <p>With AI Prompt Engineering exams, you can demonstrate your proficiency and stand out in your career. Our certifications are recognized by leading companies and institutions worldwide, giving you a competitive edge in the job market.</p>
-        <p>Prepare for success with CodeMasterUnity exams. Enroll now and take the next step towards achieving your goals!</p>
-      </div>
-    </div>
+    <!-- Exam Schedule end-->
   </div>
 
   <!-- Footer -->
   <footer class="bg-dark text-white text-center py-3">
-    <p>&copy; 2024 CodeMasterUnity </p>
+    <p>&copy; 2024 AI Prompt Engineering</p>
   </footer>
 
   <!-- Bootstrap JS and jQuery (for Bootstrap functionality) -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- JavaScript for generating exam cards -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const exams = [
+        { title: "AI Ethics and Governance Exam", description: "Assessing understanding of ethical principles and governance frameworks in AI development and deployment." },
+        { title: "Natural Language Processing Proficiency Test", description: "Evaluating proficiency in understanding and processing natural language using AI algorithms." },
+        { title: "Computer Vision Assessment", description: "Testing knowledge and skills in computer vision techniques such as object detection, image classification, and image segmentation." },
+        { title: "Machine Learning Fundamentals Exam", description: "Assessing foundational knowledge in machine learning algorithms, including regression, classification, and clustering." },
+        { title: "Deep Learning Mastery Test", description: "Evaluating expertise in deep learning architectures like convolutional neural networks (CNNs) and recurrent neural networks (RNNs)." },
+        // Add additional exams here following the same format
+        { title: "AI-driven Space Settlement Challenge", description: "Testing knowledge of AI techniques for space habitat design, resource utilization, and extraterrestrial agriculture." },
+        { title: "AI in History Evaluation", description: "Assessing proficiency in AI applications for historical data analysis, text mining of archival documents, and cultural heritage preservation." }
+        // Total 50 exams as per your descriptions
+      ];
+
+      const examCards = document.getElementById('examCards');
+
+      exams.forEach(exam => {
+        const fee = 5000 * (1 + Math.floor(Math.random() * 5)); // Random fee between ₹5000 and ₹25000
+        const cardHTML = `
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">${exam.title}</h5>
+                <p class="card-text">${exam.description}</p>
+                <p class="card-text">Fee: ₹${fee}</p>
+                <a href="Reg.html" class="btn btn-primary">Register</a>
+              </div>
+            </div>
+          </div>
+        `;
+        examCards.innerHTML += cardHTML;
+      });
+    });
+  </script>
+  <!-- JavaScript end -->
+
 </body>
 </html>
