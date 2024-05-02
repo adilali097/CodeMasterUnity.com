@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-</head>
-<style>
-     body {
+    <style>
+        body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -53,15 +52,14 @@
             background-color: #daa520;
             color: #000000; /* Darkened golden color on hover */
         }
-        h2{
-            
+        h2 {
             color: #000000;
         }
-        p{
-           
+        p {
             color: #000000;
         }
-</style>
+    </style>
+</head>
 <body>
     <div class="container">
         <h1>Login</h1>
@@ -76,30 +74,21 @@
         </form>
     </div>
 
-    <!-- Script to handle form submission and show/hide pages -->
     <script>
         document.getElementById("loginForm").addEventListener("submit", function(event) {
             event.preventDefault(); // Prevent default form submission
-            
-            // Check if username and password are correct (this is a simple example, in real applications, you'd use server-side validation)
-            var username = document.getElementById("username").value;
-            var password = document.getElementById("password").value;
 
-            if (username === "user@gmail.com" && password === "0123456789") {
-                // Show the account details page
-                document.body.innerHTML = `
-                    <div class="container">
-                        <h1>Welcome to Your Account!</h1>
-                        <div>
-                            <h2>Payment Details</h2>
-                            <p>Account Number: 190201000942948</p>
-                            <p>IFSC Code: FDRL0001902</p>
-                            <a href="https://paytm.com" class="button">Click to Pay with Paytm</a>
-                        </div>
-                    </div>`;
-            } else {
-                alert("Invalid username or password. Please try again.");
-            }
+            // Show the account details page regardless of what username and password are entered
+            document.body.innerHTML = `
+                <div class="container">
+                    <h1>Welcome to Your Account!</h1>
+                    <div>
+                        <h2>Payment Details</h2>
+                        <p>Account Number: 190201000942948</p>
+                        <p>IFSC Code: FDRL0001902</p>
+                        <a href="https://paytm.com" class="button">Click to Pay with Paytm</a>
+                    </div>
+                </div>`;
         });
     </script>
 </body>
