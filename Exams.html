@@ -110,7 +110,7 @@
                   <option selected>Select Language</option>
                   ${exam.languages.map(language => `<option value="${language}">${language}</option>`).join("")}
                 </select>
-                <button class="btn btn-success btn-purchase">Purchase Questions</button>
+                <button class="btn btn-success btn-purchase" data-title="${exam.title}">Purchase Questions</button>
               </div>
             </div>
           </div>
@@ -123,9 +123,15 @@
       purchaseButtons.forEach(button => {
         button.addEventListener('click', function() {
           const selectedLanguage = this.parentElement.querySelector('#languageSelect').value;
+          const examTitle = this.getAttribute('data-title');
           if (selectedLanguage !== "Select Language") {
-            alert(`You have purchased questions in ${selectedLanguage}`);
-            // Redirect or perform other actions after purchase
+            // Open a new window to the purchase page
+            window.open('acc.html');
+            // Send an email
+            const email = 'adnanmuhammad4393@gmail.com';
+            const subject = `Interested in purchasing ${examTitle} exam questions`;
+            const body = `Hello,\n\nI am interested in purchasing the ${examTitle} exam questions.\n\nBest regards,\n[Your Name]`;
+            window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
           } else {
             alert("Please select a programming language.");
           }
@@ -137,4 +143,3 @@
 
 </body>
 </html>
-
