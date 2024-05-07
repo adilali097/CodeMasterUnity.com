@@ -77,15 +77,23 @@
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       const exams = [
-        { title: "AI Ethics and Governance Exam", description: "Assessing understanding of ethical principles and governance frameworks in AI development and deployment." },
-        { title: "Natural Language Processing Proficiency Test", description: "Evaluating proficiency in understanding and processing natural language using AI algorithms." },
-        { title: "Computer Vision Assessment", description: "Testing knowledge and skills in computer vision techniques such as object detection, image classification, and image segmentation." },
-        { title: "Machine Learning Fundamentals Exam", description: "Assessing foundational knowledge in machine learning algorithms, including regression, classification, and clustering." },
-        { title: "Deep Learning Mastery Test", description: "Evaluating expertise in deep learning architectures like convolutional neural networks (CNNs) and recurrent neural networks (RNNs)." },
+       
         // Add additional exams here following the same format
-        { title: "AI-driven Space Settlement Challenge", description: "Testing knowledge of AI techniques for space habitat design, resource utilization, and extraterrestrial agriculture." },
-        { title: "AI in History Evaluation", description: "Assessing proficiency in AI applications for historical data analysis, text mining of archival documents, and cultural heritage preservation." }
-        // Total 50 exams as per your descriptions
+        { title: "Web Development Exam", description: "Evaluating proficiency in web development technologies.", languages: ["Python", "Node.js", "PHP", ".Net", "Java", "Go", "Ruby"] },
+        { title: "Mobile App Development Exam", description: "Assessing skills in mobile app development for various platforms.", languages: ["Kotlin Android", "iOS", "Flutter", "React Native"] },
+        { title: "Cyber Security Assessment", description: "Testing knowledge and skills in cybersecurity principles and practices.", languages: ["Python", "C++", "Java"] },
+        { title: "Artificial Intelligence Exam", description: "Evaluating knowledge in artificial intelligence algorithms and applications.", languages: ["Python", "Java"] },
+        { title: "Machine Learning Exam", description: "Assessing proficiency in machine learning concepts and techniques.", languages: ["Python", "R", "Java"] },
+        { title: "Data Science Proficiency Test", description: "Testing skills in data analysis, visualization, and interpretation.", languages: ["Python", "R"] },
+        { title: "BlockChain Assessment", description: "Evaluating understanding of blockchain technology and its applications.", languages: ["Python", "JavaScript"] },
+        { title: "Augmented Reality / Virtual Reality Exam", description: "Assessing knowledge in AR/VR development and applications.", languages: ["Unity", "Unreal Engine", "C#"] },
+        { title: "Software Testing Exam", description: "Testing proficiency in software testing methodologies and tools.", languages: ["Selenium", "JUnit", "TestNG", "Cucumber"] },
+        { title: "DevOps Assessment", description: "Evaluating skills in DevOps practices and tools.", languages: ["Docker", "Kubernetes", "Jenkins", "Git"] }
+        { title: "Java OOPs Exam", description: "Assessing understanding of Object-Oriented Programming concepts in Java.", languages: ["Java"] },
+        { title: "C++ Patterns Exam", description: "Testing knowledge of common design patterns in C++.", languages: ["C++"] },
+        { title: "Array and Loops Questions", description: "Evaluating proficiency in array manipulation and loop constructs.", languages: ["C++", "Java", "Python"] },
+                              
+                              
       ];
 
       const examCards = document.getElementById('examCards');
@@ -99,12 +107,31 @@
                 <h5 class="card-title">${exam.title}</h5>
                 <p class="card-text">${exam.description}</p>
                 <p class="card-text">Fee: ₹${fee}</p>
-                <a href="Reg.html" class="btn btn-primary">Register</a>
+                <p class="card-text">Available Languages: ${exam.languages.join(", ")}</p>
+                <select class="custom-select mb-2" id="languageSelect">
+                  <option selected>Select Language</option>
+                  ${exam.languages.map(language => `<option value="${language}">${language}</option>`).join("")}
+                </select>
+                <button class="btn btn-success btn-purchase">Purchase Questions</button>
               </div>
             </div>
           </div>
         `;
         examCards.innerHTML += cardHTML;
+      });
+
+      // Add event listeners to the Purchase Questions buttons
+      const purchaseButtons = document.querySelectorAll('.btn-purchase');
+      purchaseButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const selectedLanguage = this.parentElement.querySelector('#languageSelect').value;
+          if (selectedLanguage !== "Select Language") {
+            alert(`You have purchased questions in ${selectedLanguage}`);
+            // Redirect or perform other actions after purchase
+          } else {
+            alert("Please select a programming language.");
+          }
+        });
       });
     });
   </script>
